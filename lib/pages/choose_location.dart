@@ -1,25 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 class ChooseLocation extends StatefulWidget {
   @override
   _ChooseLocationState createState() => _ChooseLocationState();
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
-  void getData() async{
-    //simulate network request
-    String username=  await Future.delayed(Duration(seconds: 3),(){
-     return 'ananth';
-    });
-  String greeting=await  Future.delayed(Duration(seconds: 3),(){
-      return 'hello gud eve';
-    });
-  print('$username-$greeting');
-  }
 
   @override
   Widget build(BuildContext context) {
