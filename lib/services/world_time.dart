@@ -9,7 +9,7 @@ class WorldTime{
   String time;
   String flag;
   String url;
-
+  bool isdaytime;
  WorldTime({this.location,this.flag,this.time,this.url});
   Future<void> getTime() async{
     try{
@@ -24,6 +24,7 @@ class WorldTime{
       //create a date time object
       DateTime now =DateTime.parse(datetime);
       now=now.add(Duration(hours:int.parse(offset) ));
+      isdaytime=now.hour>6&&now.hour<20?true:false;
       time=DateFormat.jm().format(now);
     }
     catch(e){
